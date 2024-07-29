@@ -1,0 +1,24 @@
+.banners {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
+    gap: 12px;
+    box-sizing: border-box;
+
+    grid-auto-rows: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+@media (min-width: 768px) {
+    .banners {
+        max-height: 1200px;
+        overflow-y: auto;
+    }
+}
+
+.items {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
