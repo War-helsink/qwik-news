@@ -1,3 +1,4 @@
-import NewsList from "./ui/NewsList";
+import { NewsListWithSkeleton, NewsListWithResourceLoading } from "./ui/NewsList";
+import NewsFilters from "./ui/NewsFilters";
 
-export { NewsList };
+export { NewsListWithSkeleton, NewsListWithResourceLoading, NewsFilters };

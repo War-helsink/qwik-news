@@ -1,3 +1,5 @@
+import { Link } from "@builder.io/qwik-city";
+
 import Chip from "app/shared/ui/Chip";
 import SmartImage from "app/shared/ui/Image";
 import { formatTimeAgo } from "app/shared/helpers";
@@ -12,15 +14,11 @@ const NewsDetails = ({ item }: NewsDetailsProps) => {
 			<div class="p-5 md:px-5 md:py-0">
 				<p>
 					{item.description} ({item.language})
-					<ion-button
-						class="block w-fit"
-						target="_blank"
-						rel="noreferrer"
-						shape="round"
-						href={item.url}
-					>
-						Read more...
-					</ion-button>
+					<Link href={item.url} target="_blank" rel="noreferrer">
+						<button type="button" class="block w-fit">
+							Read more...
+						</button>
+					</Link>
 				</p>
 				<p class="text-xs text-medium-default mb-2">
 					{formatTimeAgo(item.published)} by {item.author}

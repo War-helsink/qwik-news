@@ -1,3 +1,4 @@
+import type { PropFunction } from "@builder.io/qwik";
 import type { SkeletonType, DirectionType } from "app/shared/interfaces";
 
 export interface SmartImageProps {
@@ -8,6 +9,10 @@ export interface SmartImageProps {
 }
 
 export interface SkeletonProps {
+	class?: string;
+}
+
+export interface SkeletonsProps {
 	count: number;
 	type: SkeletonType;
 	direction: DirectionType;
@@ -16,4 +21,6 @@ export interface SkeletonProps {
 export interface ChipProps {
 	active?: boolean;
 	text?: string;
+
+	onClick$?: PropFunction<() => void>;
 }

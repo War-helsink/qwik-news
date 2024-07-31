@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 import { NewsCard } from "app/entities/news";
 import withSkeleton from "app/shared/hocs/withSkeleton";
+import withResourceLoading from "app/shared/hocs/withResourceLoading";
 
 import type { NewsListProps } from "../../model/props";
 import styles from "./styles.module.scss";
@@ -16,6 +17,12 @@ const NewsList = component$<NewsListProps>(({ type = "item", news }) => {
 	);
 });
 
-const NewsListWithSkeleton = withSkeleton<NewsListProps>(NewsList, 24);
+const NewsListWithSkeleton = withSkeleton<NewsListProps>(NewsList, 10);
 
-export default NewsListWithSkeleton;
+const NewsListWithResourceLoading = withResourceLoading<NewsListProps, "news">(
+	NewsList,
+	10,
+	"news",
+);
+
+export { NewsListWithSkeleton, NewsListWithResourceLoading };

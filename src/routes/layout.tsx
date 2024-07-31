@@ -1,21 +1,42 @@
-import { component$, Slot } from "@builder.io/qwik";
+import {
+	component$,
+	useStore,
+	useContextProvider,
+	Slot,
+} from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
 import { Footer } from "app/widgets/footer";
 import { Header } from "app/widgets/header";
 
+import { PAGE_SIZE } from "app/shared/config";
+import { NewsStore, type NewsStoreType } from "context";
+
 export default component$(() => {
+	const store = useStore<NewsStoreType>({
+		currentNews: null,
+		filters: {
+			pageNumber: 1,
+			pageSize: PAGE_SIZE,
+			category: "regional",
+			keywords: "",
+			language: "en",
+		},
+	});
+
+	useContextProvider(NewsStore, store);
+
 	return (
-		<ion-app>
+		<>
 			<Header />
 
-			<ion-content>
+			<div class="w-full h-full relative overflow-y-auto overscroll-y-contain">
 				<div class="min-h-full p-6">
 					<Slot />
 				</div>
 				<Footer />
-			</ion-content>
-		</ion-app>
+			</div>
+		</>
 	);
 });
 

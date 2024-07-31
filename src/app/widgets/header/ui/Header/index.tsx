@@ -7,39 +7,40 @@ import { GITHUB_URL } from "app/shared/config";
 import { IoLogoGithub } from "@qwikest/icons/ionicons";
 import { ThemeButton } from "app/features/theme";
 
-import styles from "./styles.module.scss";
-
 export default component$(() => {
 	return (
-		<ion-header>
-			<ion-toolbar class={styles.header}>
-				<ion-buttons slot="start">
+		<header class="bg-light-default shadow-2xl">
+			<div class="py-3 px-6 flex justify-between">
+				<div class="flex items-center">
 					<Link href={"/"}>
-						<ion-button color="dark">
+						<button
+							type="button"
+							class="relative after:absolute after:w-full after:h-full after:top-0 after:left-0 after:opacity-0 hover:after:bg-medium-default hover:after:opacity-5"
+						>
 							<div class="flex flex-col items-start">
 								<h1 class="text-3xl font-bold">News</h1>
 								<p class="text-base font-medium">{formatDate(new Date())}</p>
 							</div>
-						</ion-button>
+						</button>
 					</Link>
-				</ion-buttons>
+				</div>
 
-				<div class={styles.navbar} slot="end" />
+				<div class="flex items-center">
+					<div class="h-8 w-px mx-2 bg-medium-default opacity-25" />
 
-				<ion-buttons slot="end">
 					<ThemeButton />
-					<ion-button
-						color="medium"
-						shape="round"
-						target="_blank"
-						href={GITHUB_URL}
-					>
-						<div slot="icon-only" class="text-2xl">
-							<IoLogoGithub  />
-						</div>
-					</ion-button>
-				</ion-buttons>
-			</ion-toolbar>
-		</ion-header>
+					<Link target="_blank" href={GITHUB_URL}>
+						<button
+							type="button"
+							class="text-medium-default relative p-3 rounded-full after:absolute after:rounded-full after:w-full after:h-full after:top-0 after:left-0 after:opacity-0 hover:after:bg-medium-default hover:after:opacity-5"
+						>
+							<div class="text-2xl">
+								<IoLogoGithub />
+							</div>
+						</button>
+					</Link>
+				</div>
+			</div>
+		</header>
 	);
 });

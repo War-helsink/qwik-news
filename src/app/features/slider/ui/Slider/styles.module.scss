@@ -1,0 +1,19 @@
+.arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  padding: 8px;
+
+  color: #fff;
+  background: linear-gradient(to right, #ff30ac, #c882ff) !important;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
