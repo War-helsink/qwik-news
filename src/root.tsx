@@ -12,7 +12,7 @@ import { ThemeContext } from "context";
 import "global.scss";
 
 export default component$(() => {
-	const theme = useSignal<boolean | null>(null);
+	const theme = useSignal<boolean | undefined>(undefined);
 
 	useContextProvider(ThemeContext, theme);
 
@@ -28,7 +28,7 @@ export default component$(() => {
 				)}
 				<RouterHead />
 			</head>
-			<body lang="en" class={`${theme.value? "palette-dark": ""} flex flex-col w-screen h-screen text-text-default bg-background-default`} >
+			<body lang="en" class={"flex flex-col w-screen h-screen text-text-default bg-background-default"} >
 				<RouterOutlet />
 				{!isDev && <ServiceWorkerRegister />}
 			</body>

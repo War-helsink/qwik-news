@@ -10,5 +10,10 @@ export const getColorPreference = (): boolean => {
 };
 
 export const setPreference = (theme: boolean) => {
-	localStorage.setItem("theme", JSON.stringify(theme));
+	localStorage.setItem(themeStorageKey, JSON.stringify(theme));
+	reflectPreference(theme);
+};
+
+export const reflectPreference = (theme: boolean) => {
+	document.documentElement.classList.toggle('palette-dark', theme);
 };

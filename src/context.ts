@@ -9,4 +9,4 @@ export interface NewsStoreType {
 }
 
 export const NewsStore = createContextId<NewsStoreType>("site-store");
-export const ThemeContext = createContextId<Signal<boolean | null>>("theme");
+export const ThemeContext = createContextId<Signal<boolean | undefined>>("theme");

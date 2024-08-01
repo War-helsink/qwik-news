@@ -10,6 +10,7 @@ export default component$(() => {
 	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		theme.value = getColorPreference();
+		setPreference(theme.value);
 	});
 
 	const toggleTheme = $(() => {
