@@ -57,9 +57,52 @@
     --color-dark-contrast-rgb: 255, 255, 255;
     --color-dark-shade: #1e2023;
     --color-dark-tint: #383a3e;
+
+    --background-color: #ffffff;
+    --background-color-rgb: 255, 255, 255;
+    --text-color: #121212;
+    --text-color-rgb: 18, 18, 18;
+    --background-color-step-50: #f3f3f3;
+    --background-color-step-100: #e7e7e7;
+    --background-color-step-150: #dbdbdb;
+    --background-color-step-200: #d0d0d0;
+    --background-color-step-250: #c4c4c4;
+    --background-color-step-300: #b8b8b8;
+    --background-color-step-350: #acacac;
+    --background-color-step-400: #a0a0a0;
+    --background-color-step-450: #949494;
+    --background-color-step-500: #898989;
+    --background-color-step-550: #7d7d7d;
+    --background-color-step-600: #717171;
+    --background-color-step-650: #656565;
+    --background-color-step-700: #595959;
+    --background-color-step-750: #4d4d4d;
+    --background-color-step-800: #414141;
+    --background-color-step-850: #363636;
+    --background-color-step-900: #2a2a2a;
+    --background-color-step-950: #1e1e1e;
+    --text-color-step-50: #1e1e1e;
+    --text-color-step-100: #2a2a2a;
+    --text-color-step-150: #363636;
+    --text-color-step-200: #414141;
+    --text-color-step-250: #4d4d4d;
+    --text-color-step-300: #595959;
+    --text-color-step-350: #656565;
+    --text-color-step-400: #717171;
+    --text-color-step-450: #7d7d7d;
+    --text-color-step-500: #898989;
+    --text-color-step-550: #949494;
+    --text-color-step-600: #a0a0a0;
+    --text-color-step-650: #acacac;
+    --text-color-step-700: #b8b8b8;
+    --text-color-step-750: #c4c4c4;
+    --text-color-step-800: #d0d0d0;
+    --text-color-step-850: #dbdbdb;
+    --text-color-step-900: #e7e7e7;
+    --text-color-step-950: #f3f3f3;
 }
 
-.ion-palette-dark {
+.palette-dark {
     --color-primary: #4d8dff;
     --color-primary-rgb: 77, 141, 255;
     --color-primary-contrast: #000;
@@ -114,8 +157,7 @@
     --color-dark-contrast-rgb: 0, 0, 0;
     --color-dark-shade: #d7d8da;
     --color-dark-tint: #f5f6f9;
-}
-.ion-palette-dark {
+
     --background-color: #121212;
     --background-color-rgb: 18, 18, 18;
     --text-color: #ffffff;
@@ -158,8 +200,5 @@
     --text-color-step-850: #363636;
     --text-color-step-900: #2a2a2a;
     --text-color-step-950: #1e1e1e;
-    --item-background: #1e1e1e;
     --toolbar-background: #1f1f1f;
-    --tab-bar-background: #1f1f1f;
-    --card-background: #1e1e1e;
 }

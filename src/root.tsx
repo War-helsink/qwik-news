@@ -28,7 +28,7 @@ export default component$(() => {
 				)}
 				<RouterHead />
 			</head>
-			<body lang="en" class="flex flex-col w-screen h-screen text-text bg-background">
+			<body lang="en" class={`${theme.value? "palette-dark": ""} flex flex-col w-screen h-screen text-text-default bg-background-default`} >
 				<RouterOutlet />
 				{!isDev && <ServiceWorkerRegister />}
 			</body>

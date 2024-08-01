@@ -8,7 +8,6 @@ import {
 import { IoArrowBack, IoArrowForward } from "@qwikest/icons/ionicons";
 
 import type { PaginationButtonsProps } from "../../model/props";
-import styles from "./styles.module.scss";
 
 export default component$<PaginationButtonsProps>(
 	({ currentPage, minPages, maxPages, changePageNumber$ }) => {
@@ -48,24 +47,37 @@ export default component$<PaginationButtonsProps>(
 			changePageNumber$(currentPage);
 		});
 
-		return (
-			<div class="w-full flex justify-center items-center gap-1.5">
-				<button
-					type="button"
-					onClick$={() => prevPage()}
-					disabled={current.value === 1}
-					class={`hidden lg:flex items-center justify-center ${styles.button} ${
-						current.value === 1 ? styles.active : ""
-					}`}
-				>
-					<div class="text-base">
-						<IoArrowBack />
-					</div>
-				</button>
+		const style = {
+			default:
+				"text-text-step-400 border-transparent hover:text-text-step-200 hover:border-border-default",
+			disabled: "text-primary-default border-primary-default",
+		};
 
-				{current.value - 2 > min.value && (
+		return (
+			<nav class="border-y border-border-default w-full flex justify-between items-center">
+				<div class="flex-1 flex w-0 my-[-1px] h-[60px]">
 					<button
-						class={`${styles.button} flex items-center justify-center`}
+						type="button"
+						class={`hidden lg:flex items-center gap-3 text-sm font-medium py-4 pr-2 border-y-2 ${current.value === min.value ? style.disabled : style.default}`}
+						onClick$={() => prevPage()}
+						disabled={current.value === min.value}
+					>
+						<div
+							class={
+								current.value === min.value
+									? "text-primary-default"
+									: "text-text-step-400"
+							}
+						>
+							<IoArrowBack />
+						</div>
+						Previous
+					</button>
+				</div>
+
+				<div class="flex-1 flex justify-center w-0 my-[-1px] h-[60px] z-50">
+					<button
+						class={`${current.value - 2 > min.value ? "block" : "hidden"} text-sm font-medium py-4 px-4 border-y-2 ${style.default}`}
 						type="button"
 						onClick$={() => {
 							selectPage(min.value);
@@ -73,65 +85,66 @@ export default component$<PaginationButtonsProps>(
 					>
 						<span>{min.value}</span>
 					</button>
-				)}
 
-				{current.value - 2 > min.value + 1 && (
 					<button
 						disabled
-						class={`${styles.button} flex items-center justify-center`}
+						class={`${current.value - 2 > min.value + 1 ? "block" : "hidden"} text-sm font-medium py-4 px-4`}
 						type="button"
 					>
 						<span>...</span>
 					</button>
-				)}
 
-				{pageNumbers.value.map((pageNumber) => (
-					<button
-						key={pageNumber}
-						class={`${styles.button} flex items-center justify-center ${
-							pageNumber === current.value ? styles.active : ""
-						}`}
-						disabled={pageNumber === current.value}
-						type="button"
-						onClick$={() => selectPage(pageNumber)}
-					>
-						<span>{pageNumber}</span>
-					</button>
-				))}
+					{pageNumbers.value.map((pageNumber) => (
+						<button
+							key={pageNumber}
+							class={`text-sm font-medium py-4 px-4 border-y-2 ${pageNumber === current.value ? style.disabled : style.default}`}
+							disabled={pageNumber === current.value}
+							type="button"
+							onClick$={() => selectPage(pageNumber)}
+						>
+							<span>{pageNumber}</span>
+						</button>
+					))}
 
-				{current.value + 2 < max.value - 1 && (
 					<button
 						disabled
-						class={`${styles.button} flex items-center justify-center`}
+						class={`${current.value + 2 < max.value - 1 ? "block" : "hidden"} text-sm font-medium py-4 px-4`}
 						type="button"
 					>
 						<span>...</span>
 					</button>
-				)}
 
-				{current.value + 2 < max.value && (
 					<button
-						class={`${styles.button} flex items-center justify-center`}
 						type="button"
+						class={`${current.value + 2 < max.value ? "block" : "hidden"} text-sm font-medium py-4 px-4 border-y-2 ${style.default}`}
 						onClick$={() => {
 							selectPage(max.value);
 						}}
 					>
 						<span class="text-base">{max.value}</span>
 					</button>
-				)}
+				</div>
 
-				<button
-					type="button"
-					onClick$={() => nextPage()}
-					disabled={current.value === max.value}
-					class={`hidden lg:flex items-center justify-center ${styles.button} ${current.value === max.value ? styles.active : ""}`}
-				>
-					<div class="text-base">
-						<IoArrowForward />
-					</div>
-				</button>
-			</div>
+				<div class="flex-1 flex justify-end w-0 my-[-1px] h-[60px]">
+					<button
+						type="button"
+						class={`hidden lg:flex items-center gap-3 text-sm font-medium py-4 pl-2 border-y-2 ${current.value === max.value ? style.disabled : style.default}`}
+						onClick$={() => nextPage()}
+						disabled={current.value === max.value}
+					>
+						Next
+						<div
+							class={
+								current.value === max.value
+									? "text-primary-default"
+									: "text-text-step-400"
+							}
+						>
+							<IoArrowForward />
+						</div>
+					</button>
+				</div>
+			</nav>
 		);
 	},
 );

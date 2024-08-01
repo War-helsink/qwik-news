@@ -9,7 +9,7 @@ export default component$<SearchProps>(({ keywords, setKeywords$ }) => {
 	return (
 		<div class="w-hull">
 			<input
-				class="text-dark-default bg-light-default block w-full border border-light-default border-solid rounded-xl appearance-none p-4 text-base placeholder:text-medium-default focus:outline-none"
+				class="text-dark-default bg-transparent block w-full border border-border-default border-solid rounded-xl appearance-none p-4 placeholder:text-medium-default hover:border-dark-default focus:outline-none focus:border-primary-default"
 				type="text"
 				placeholder="Search"
 				value={keywords}

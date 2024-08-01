@@ -9,7 +9,7 @@ import { ThemeButton } from "app/features/theme";
 
 export default component$(() => {
 	return (
-		<header class="bg-light-default shadow-2xl">
+		<header class="bg-background-shade shadow-2xl">
 			<div class="py-3 px-6 flex justify-between">
 				<div class="flex items-center">
 					<Link href={"/"}>

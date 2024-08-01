@@ -8,7 +8,7 @@ export default component$<ChipProps>(
 		return (
 			<>
 				<div
-					class={`flex justify-center min-w-fit p-2 m-1 rounded-full cursor-pointer text-sm bg-light-default ${active ? styles.active : ""}`}
+					class={`flex justify-center min-w-fit p-2 m-1 rounded-full cursor-pointer text-sm bg-background-tint ${active ? styles.active : ""}`}
 					onClick$={onClick$}
 				>
 					{text}
