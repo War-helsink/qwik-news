@@ -15,7 +15,7 @@ export const getCategories = async () => {
 				},
 			},
 		);
-		return response.data;
+		return response.data.categories;
 	} catch (error) {
 		console.log(error);
 	}

@@ -40,7 +40,7 @@ export const getLatestNews = async () => {
 				},
 			},
 		);
-		return response.data;
+		return response.data.news;
 	} catch (error) {
 		console.log(error);
 	}

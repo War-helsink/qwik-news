@@ -1,13 +1,13 @@
-import { component$, useComputed$} from "@builder.io/qwik";
+import { component$, useComputed$ } from "@builder.io/qwik";
 
 import { NewsListWithSkeleton } from "app/widgets/news";
 import { useGetLatestNews } from "routes";
 
 export default component$(() => {
-	const signal = useGetLatestNews();
+	const news = useGetLatestNews();
 
 	const isLoading = useComputed$(() => {
-		return signal.value ? signal.value.news.length === 0 : true;
+		return news.value ? news.value.length === 0 : true;
 	});
 
 	return (
@@ -16,7 +16,7 @@ export default component$(() => {
 				type={"banner"}
 				direction={"row"}
 				isLoading={isLoading.value}
-				news={signal.value ? signal.value.news : undefined}
+				news={news.value ? news.value : undefined}
 			/>
 		</section>
 	);

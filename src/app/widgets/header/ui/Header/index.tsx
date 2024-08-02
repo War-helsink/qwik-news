@@ -5,6 +5,7 @@ import { formatDate } from "app/shared/helpers";
 import { GITHUB_URL } from "app/shared/config";
 
 import { IoLogoGithub } from "@qwikest/icons/ionicons";
+import { LanguageButton } from "app/features/language";
 import { ThemeButton } from "app/features/theme";
 
 export default component$(() => {
@@ -27,6 +28,7 @@ export default component$(() => {
 
 				<div class="flex items-center">
 					<div class="h-8 w-px mx-2 bg-medium-default opacity-25" />
+					<LanguageButton />
 
 					<ThemeButton />
 					<Link target="_blank" href={GITHUB_URL}>

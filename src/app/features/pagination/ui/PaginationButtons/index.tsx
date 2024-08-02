@@ -75,7 +75,7 @@ export default component$<PaginationButtonsProps>(
 					</button>
 				</div>
 
-				<div class="flex-1 flex justify-center w-0 my-[-1px] h-[60px] z-50">
+				<div class="flex-1 flex justify-center w-0 my-[-1px] h-[60px] z-10">
 					<button
 						class={`${current.value - 2 > min.value ? "block" : "hidden"} text-sm font-medium py-4 px-4 border-y-2 ${style.default}`}
 						type="button"

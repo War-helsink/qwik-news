@@ -34,8 +34,7 @@ export default {
 				},
 			},
 			border: {
-				default:
-					"var(--background-color-step-300, #b3b3b3)",
+				default: "var(--background-color-step-300, #b3b3b3)",
 			},
 			background: {
 				default: "var(--background-color)",
@@ -117,6 +116,10 @@ export default {
 				contrast: "var(--color-danger-contrast)",
 				shade: "var(--color-danger-shade)",
 				tint: "var(--color-danger-tint)",
+			},
+			active: {
+				text: "var(--active-text-color)",
+				background: "var(--active-background-color)",
 			},
 			transparent: "transparent",
 		},

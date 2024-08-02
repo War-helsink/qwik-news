@@ -19,7 +19,7 @@ export default component$<SkeletonsProps>(
 
 				{type === "item" &&
 					[...Array(count)].map((_, index) => (
-						<div key={`key-li-${index}`} class="flex w-full h-20 gap-3">
+						<div key={`key-li-${index}`} class="flex w-full gap-3">
 							<Skeleton class="w-16 h-16" />
 							<div class="flex flex-col gap-2 w-9/12">
 								<Skeleton class="h-6" />

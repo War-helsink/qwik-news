@@ -8,6 +8,21 @@ export interface SmartImageProps {
 	class?: string;
 }
 
+export interface SelectProps<T = any> {
+	class?: string;
+	value: T;
+	onChange$?: PropFunction<(value: T) => void>;
+
+	options: SelectOptionProps<T>[];
+}
+
+export interface SelectOptionProps<T = any> {
+	active?: boolean;
+	label: string;
+	value: T;
+	onSelect$?: PropFunction<(value: T) => void>;
+}
+
 export interface SkeletonProps {
 	class?: string;
 }

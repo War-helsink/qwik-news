@@ -5,7 +5,7 @@ const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 import type { LanguageApiResponse } from "../model/types";
 
-export const useGetLanguages = async () => {
+export const getLanguages = async () => {
 	try {
 		const response = await axios.get<LanguageApiResponse>(
 			`${BASE_URL}available/languages`,
@@ -15,7 +15,7 @@ export const useGetLanguages = async () => {
 				},
 			},
 		);
-		return response.data;
+		return response.data.languages;
 	} catch (error) {
 		console.log(error);
 	}
