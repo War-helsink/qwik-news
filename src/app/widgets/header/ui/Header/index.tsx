@@ -11,8 +11,8 @@ import { ThemeButton } from "app/features/theme";
 export default component$(() => {
 	return (
 		<header class="bg-background-shade shadow-2xl">
-			<div class="py-3 px-6 flex justify-between">
-				<div class="flex items-center">
+			<nav class="py-3 px-6 flex justify-between">
+				<ul class="flex items-center">
 					<Link href={"/"}>
 						<button
 							type="button"
@@ -24,9 +24,9 @@ export default component$(() => {
 							</div>
 						</button>
 					</Link>
-				</div>
+				</ul>
 
-				<div class="flex items-center">
+				<ul class="flex items-center">
 					<div class="h-8 w-px mx-2 bg-medium-default opacity-25" />
 					<LanguageButton />
 
@@ -41,8 +41,8 @@ export default component$(() => {
 							</div>
 						</button>
 					</Link>
-				</div>
-			</div>
+				</ul>
+			</nav>
 		</header>
 	);
 });

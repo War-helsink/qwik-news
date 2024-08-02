@@ -10,7 +10,7 @@ export const SelectOption = component$<SelectOptionProps>(
 
 		return (
 			<li
-				class={`${active ? "bg-background-default" : ""} relative cursor-pointer select-none py-2 px-3 hover:bg-background-default`}
+				class={`${active ? "bg-primary-default text-active-text" : ""} relative cursor-pointer select-none py-2 px-3 hover:bg-primary-default hover:text-active-text`}
 				onClick$={handleClick}
 			>
 				<span class="block truncate">{label}</span>
