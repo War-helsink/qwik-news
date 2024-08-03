@@ -1,7 +1,6 @@
-import NewsDetails from "./ui/NewsDetails";
 import NewsCard from "./ui/NewsCard";
 
-export { NewsCard, NewsDetails };
+export { NewsCard };
 
 export { getNews, getLatestNews } from "./api/api";
 

@@ -5,7 +5,3 @@ export interface NewsCardProps {
 	type: NewsType;
 	item: INews;
 }
-
-export interface NewsDetailsProps {
-	item: INews;
-}

@@ -42,7 +42,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "sass": "^1.77.8",
-    "tailwindcss": "3.3.3",
+    "tailwindcss": "^3.4.7",
     "typescript": "5.4.5",
     "undici": "*",
     "vite": "^5.2.10",

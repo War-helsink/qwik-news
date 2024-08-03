@@ -4,7 +4,11 @@ export default {
 	theme: {
 		extend: {
 			boxShadow: {
-				"up-2xl": "0 -25px 50px -12px rgba(0, 0, 0, 0.25)",
+				"ut-2xl": "0 -25px 50px -12px rgba(0, 0, 0, 0.25)",
+				"ul-2xl": "-25px 0 50px -12px rgba(0, 0, 0, 0.25)",
+				"ur-2xl": "25px 0 50px -12px rgba(0, 0, 0, 0.25)",
+				"full-2xl":
+					"0 -25px 50px -12px rgba(0, 0, 0, 0.25), 0 25px 50px -12px rgba(0, 0, 0, 0.25), -25px 0 50px -12px rgba(0, 0, 0, 0.25), 25px 0 50px -12px rgba(0, 0, 0, 0.25)",
 			},
 		},
 		colors: {
