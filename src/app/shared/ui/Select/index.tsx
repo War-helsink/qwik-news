@@ -32,7 +32,7 @@ export const Select = component$<SelectProps>(
 					</button>
 
 					<ul
-						class={`${isOpen.value ? "opacity-100 scale-100" : "opacity-0 scale-95 -z-50"} transition-all ease-in-out duration-300 text-base z-50 absolute right-0 mt-1 max-h-[75vh] w-max min-w-44 overflow-y-auto rounded-md bg-background-shade shadow-full-2xl focus:outline-none`}
+						class={`${isOpen.value ? "opacity-100 scale-100 z-50" : "opacity-0 scale-95 -z-50"} transition-all ease-in-out duration-300 text-base absolute right-0 mt-1 max-h-[75vh] w-max min-w-44 overflow-y-auto rounded-md bg-background-shade shadow-full-2xl focus:outline-none`}
 					>
 						{options.map((option) => (
 							<SelectOption

@@ -5,7 +5,6 @@ import { Slider } from "app/features/slider";
 import { Categories } from "app/features/categories";
 
 import type { NewsFiltersProps } from "../../model/props";
-import styles from "./styles.module.scss";
 
 export default component$<NewsFiltersProps>(({ filters, categories }) => {
 	const isLoading = useComputed$(() => {
@@ -13,7 +12,7 @@ export default component$<NewsFiltersProps>(({ filters, categories }) => {
 	});
 
 	return (
-		<div class={styles.filters}>
+		<div class="w-full flex flex-col gap-3">
 			<Slider>
 				<Categories
 					type="chip"

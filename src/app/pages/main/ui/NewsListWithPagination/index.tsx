@@ -5,7 +5,6 @@ import { Pagination } from "app/features/pagination";
 
 import { getNews } from "app/entities/news";
 
-import type { NewsType, DirectionType } from "app/shared/interfaces";
 import { MAX_PAGES, MIN_PAGES } from "app/shared/config";
 
 import type { NewsListWithPaginationProps } from "../../model/props";
@@ -26,8 +25,8 @@ export default component$<NewsListWithPaginationProps>(({ filters }) => {
 			currentPage={filters.pageNumber}
 		>
 			<NewsListWithResourceLoading
-				type={"item" as NewsType}
-				direction={"column" as DirectionType}
+				type={"item"}
+				direction={"column"}
 				value={newsApiResponse}
 			/>
 		</Pagination>
