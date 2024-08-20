@@ -1,10 +1,13 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, Resource } from "@builder.io/qwik";
 
 import { NewsCard } from "components/entities/news";
-import withSkeleton from "components/shared/hocs/withSkeleton";
-import withResourceLoading from "components/shared/hocs/withResourceLoading";
+import Skeleton from "components/shared/ui/Skeletons";
 
-import type { NewsListProps } from "../../model/props";
+import type {
+	NewsListProps,
+	NewsListWithSkeletonProps,
+	NewsListResourceLoadingProps,
+} from "../../model/props";
 import styles from "./styles.module.scss";
 
 const NewsList = component$<NewsListProps>(({ type = "item", news }) => {
@@ -17,12 +20,41 @@ const NewsList = component$<NewsListProps>(({ type = "item", news }) => {
 	);
 });
 
-const NewsListWithSkeleton = withSkeleton<NewsListProps>(NewsList, 10);
+const NewsListWithSkeleton = component$<NewsListWithSkeletonProps>((props) => {
+	const {
+		type = "item",
+		direction = "column",
+		isLoading,
+		...restProps
+	} = props;
 
-const NewsListWithResourceLoading = withResourceLoading<NewsListProps, "news">(
-	NewsList,
-	10,
-	"news",
+	if (isLoading) {
+		return <Skeleton type={type} count={10} direction={direction} />;
+	}
+
+	return <NewsList type={type} {...(restProps as NewsListProps)} />;
+});
+
+const NewsListWithResourceLoading = component$<NewsListResourceLoadingProps>(
+	(props) => {
+		const { type = "item", direction = "column", value, ...restProps } = props;
+
+		return (
+			<Resource
+				value={value}
+				onPending={() => (
+					<Skeleton type={type} count={10} direction={direction} />
+				)}
+				onResolved={(resolvedValue) => (
+					<NewsList
+						type={type}
+						news={resolvedValue}
+						{...(restProps as NewsListProps)}
+					/>
+				)}
+			/>
+		);
+	},
 );
 
 export { NewsListWithSkeleton, NewsListWithResourceLoading };

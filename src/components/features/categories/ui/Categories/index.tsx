@@ -1,9 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 
 import Chip from "components/shared/ui/Chip";
-import withSkeleton from "components/shared/hocs/withSkeleton";
+import Skeleton from "components/shared/ui/Skeletons";
 
-import type { CategoriesProps } from "../../model/props";
+import type {
+	CategoriesWithSkeletonProps,
+	CategoriesProps,
+} from "../../model/props";
 
 const Categories = component$<CategoriesProps>(
 	({ categories, currentCategory, setCategory$ }) => {
@@ -22,6 +25,21 @@ const Categories = component$<CategoriesProps>(
 	},
 );
 
-const CategoriesWithSkeleton = withSkeleton(Categories, 15);
+const CategoriesWithSkeleton = component$<CategoriesWithSkeletonProps>(
+	(props) => {
+		const {
+			type = "item",
+			direction = "column",
+			isLoading,
+			...restProps
+		} = props;
+
+		if (isLoading) {
+			return <Skeleton type={type} count={10} direction={direction} />;
+		}
+
+		return <Categories {...(restProps as CategoriesProps)} />;
+	},
+);
 
 export default CategoriesWithSkeleton;
