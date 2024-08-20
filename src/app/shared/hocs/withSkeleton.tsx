@@ -1,4 +1,4 @@
-import { component$, type Component } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import Skeleton from "app/shared/ui/Skeletons";
 import type { SkeletonsProps } from "app/shared/model/props";
 
@@ -10,7 +10,7 @@ export interface WithSkeletonProps {
 }
 
 function withSkeleton<T extends object>(
-	Component: Component<WithSkeletonProps & T>,
+	Component: any,
 	count: SkeletonsProps["count"],
 ) {
 	return component$<WithSkeletonProps & T>((props) => {

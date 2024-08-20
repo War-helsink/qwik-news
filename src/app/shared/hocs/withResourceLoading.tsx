@@ -2,7 +2,6 @@ import {
 	component$,
 	Resource,
 	type ResourceReturn,
-	type Component,
 } from "@builder.io/qwik";
 import Skeleton from "app/shared/ui/Skeletons";
 import type { SkeletonsProps } from "app/shared/model/props";
@@ -15,7 +14,7 @@ export interface WithSkeletonProps<T = unknown> {
 }
 
 function withResourceLoading<T extends object, K extends keyof T>(
-	Component: Component<WithSkeletonProps & Omit<T, K>>,
+	Component: any,
 	count: SkeletonsProps["count"],
     field: K, 
 ) {
