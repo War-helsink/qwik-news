@@ -64,6 +64,11 @@ The production build will generate client and server modules by running both cli
 npm run build # or `yarn build`
 ```
 
+## Ready-made version on hosting
+
+URL
+- [site](https://qwik-news-sigma.vercel.app/)
+
 ## Running the Project
 
 To get started with the project, follow these steps:
