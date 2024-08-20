@@ -1,7 +1,7 @@
 import { component$, useContext } from "@builder.io/qwik";
 import { IoLanguageSolid } from "@qwikest/icons/ionicons";
 
-import { useGetLanguages } from "routes";
+import { useGetLanguages } from "routes/layout";
 import { NewsStore } from "context";
 
 import { Select } from "app/shared/ui/Select";

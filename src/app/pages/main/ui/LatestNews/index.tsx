@@ -1,7 +1,7 @@
 import { component$, useComputed$ } from "@builder.io/qwik";
 
 import { NewsListWithSkeleton } from "app/widgets/news";
-import { useGetLatestNews } from "routes";
+import { useGetLatestNews } from "routes/layout";
 
 export default component$(() => {
 	const news = useGetLatestNews();

@@ -5,12 +5,29 @@ import {
 	Slot,
 } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { routeLoader$ } from '@builder.io/qwik-city';
 
 import { Footer } from "app/widgets/footer";
 import { Header } from "app/widgets/header";
 
 import { PAGE_SIZE } from "app/shared/config";
 import { NewsStore, type NewsStoreType } from "context";
+
+import { getLatestNews } from "app/entities/news";
+import { getCategories } from "app/entities/category";
+import { getLanguages, type LanguagesType } from "app/entities/language";
+
+export const useGetLatestNews = routeLoader$(async () => {
+	return await getLatestNews();
+});
+
+export const useGetCategories = routeLoader$(async () => {
+	return await getCategories();
+});
+
+export const useGetLanguages = routeLoader$(async () => {
+	return await getLanguages() as LanguagesType;
+});
 
 export default component$(() => {
 	const store = useStore<NewsStoreType>({

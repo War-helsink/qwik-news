@@ -1,7 +1,7 @@
 import { component$, useContext } from "@builder.io/qwik";
 import { NewsStore } from "context";
 
-import { useGetCategories } from "routes";
+import { useGetCategories } from "routes/layout";
 import { NewsFilters } from "app/widgets/news";
 
 import NewsListWithPagination from "../NewsListWithPagination";
