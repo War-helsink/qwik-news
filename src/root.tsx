@@ -4,10 +4,10 @@ import {
 	RouterOutlet,
 	ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
-import { RouterHead } from "components/router-head/router-head";
+import { RouterHead } from "components/app/router-head";
 import { isDev } from "@builder.io/qwik/build";
 
-import { ThemeContext } from "context";
+import { ThemeContext } from "components/app/context";
 
 import "global.scss";
 

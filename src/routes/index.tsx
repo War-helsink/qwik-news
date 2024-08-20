@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
-import { MainPage } from "app/pages/main";
+import { MainPage } from "components/pages/main";
 
 export default component$(() => {
 	return <MainPage />;
@@ -12,7 +12,7 @@ export const head: DocumentHead = {
 	meta: [
 		{
 			name: "description",
-			content: "Qwik site description",
+			content: "Watch news from around the world!",
 		},
 	],
 };

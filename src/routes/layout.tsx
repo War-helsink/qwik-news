@@ -7,15 +7,15 @@ import {
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { routeLoader$ } from '@builder.io/qwik-city';
 
-import { Footer } from "app/widgets/footer";
-import { Header } from "app/widgets/header";
+import { Footer } from "components/widgets/footer";
+import { Header } from "components/widgets/header";
 
-import { PAGE_SIZE } from "app/shared/config";
-import { NewsStore, type NewsStoreType } from "context";
+import { PAGE_SIZE } from "components/shared/config";
+import { NewsStore, type NewsStoreType } from "components/app/context";
 
-import { getLatestNews } from "app/entities/news";
-import { getCategories } from "app/entities/category";
-import { getLanguages, type LanguagesType } from "app/entities/language";
+import { getLatestNews } from "components/entities/news";
+import { getCategories } from "components/entities/category";
+import { getLanguages, type LanguagesType } from "components/entities/language";
 
 export const useGetLatestNews = routeLoader$(async () => {
 	return await getLatestNews();
