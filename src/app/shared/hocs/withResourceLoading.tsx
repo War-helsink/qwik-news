@@ -2,6 +2,7 @@ import {
 	component$,
 	Resource,
 	type ResourceReturn,
+	type Component,
 } from "@builder.io/qwik";
 import Skeleton from "app/shared/ui/Skeletons";
 import type { SkeletonsProps } from "app/shared/model/props";
@@ -14,9 +15,9 @@ export interface WithSkeletonProps<T = unknown> {
 }
 
 function withResourceLoading<T extends object, K extends keyof T>(
-	Component: any,
+	Component: Component<WithSkeletonProps & Omit<T, K>>,
 	count: SkeletonsProps["count"],
-    field: K, 
+	field: K,
 ) {
 	return component$<WithSkeletonProps & Omit<T, K>>((props) => {
 		const { type = "item", direction = "column", value, ...restProps } = props;
@@ -28,7 +29,12 @@ function withResourceLoading<T extends object, K extends keyof T>(
 					<Skeleton type={type} count={count} direction={direction} />
 				)}
 				onResolved={(resolvedValue) => (
-					<Component type={type} direction={direction} {...{ [field]: resolvedValue }} {...(restProps as T)} />
+					<Component
+						type={type}
+						direction={direction}
+						{...{ [field]: resolvedValue }}
+						{...(restProps as T)}
+					/>
 				)}
 			/>
 		);
